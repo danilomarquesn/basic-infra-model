@@ -3,7 +3,7 @@ module "basic_sg" {
 
   name        = var.security_group_name
   description = "Security group for Jenkins Server"
-  vpc_id      = module.vpc.vpc_id
+  vpc_id      = data.aws_vpc.selected.id
 
   ingress_cidr_blocks = ["0.0.0.0/0"]
   ingress_rules       = ["http-80-tcp", "ssh-tcp", "http-8080-tcp"]

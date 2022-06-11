@@ -1,3 +1,12 @@
+# Data VPC
+
+data "aws_vpc" "selected" {
+  filter {
+    name   = "tag:Name"
+    values = ["bootcamp-vpc"]
+  }
+}
+
 # Data of Subnet
 
 data "aws_subnet" "bootcamp_private_sub_2a" {
